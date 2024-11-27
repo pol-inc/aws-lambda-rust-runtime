@@ -153,7 +153,7 @@ where
     S::Future: Send + 'a,
     R: IntoResponse,
 {
-    fn from(service: S) -> Self {
+    pub fn from(service: S) -> Self {
         Adapter {
             service,
             _phantom_data: PhantomData,
